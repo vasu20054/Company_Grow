@@ -1,0 +1,212 @@
+/* Base styles (for larger screens first - desktop-first approach) */
+.bodyLogin {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('/photo-1498050108023-c5249f4df085.jpeg') no-repeat center center fixed;
+  display: flex;
+  background-size: cover;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-left: 50px; /* Keep this for desktop layout */
+  box-sizing: border-box; /* Ensures padding doesn't add to total width */
+}
+
+.logo-container {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #004d40;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 320px; /* Base width */
+  max-width: 90%; /* Ensure it doesn't overflow on smaller screens */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.toggle-buttons {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.toggle-buttons button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  background: #f0fdfd;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #004d40;
+  border-radius: 4px;
+}
+
+.toggle-buttons button:hover {
+  background: #d0f0ef;
+}
+
+.toggle-buttons .active {
+  background: #00796b;
+  color: white;
+  font-weight: bold;
+}
+
+form h2 {
+  margin-bottom: 1rem;
+  color: #00796b;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  color: #004d40;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #b2dfdb;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Crucial for inputs to respect padding/border within 100% width */
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%; /* space for the eye icon */
+}
+
+.password-wrapper .eye {
+  position: absolute;
+  right: 10px;
+  top: 66%; /* Changed from 70% for better vertical alignment with text baseline */
+  transform: translateY(-50%);
+  color: #555;
+  font-size: 1.2rem;
+  cursor: pointer; /* Add cursor for better UX */
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: #00796b;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #004d40;
+}
+
+.error-msg {
+  color: red;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.success-msg {
+  color: green;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* --- Media Queries --- */
+
+/* For screens smaller than 768px (e.g., tablets in portrait, large phones) */
+@media (max-width: 768px) {
+  .bodyLogin {
+    padding-left: 0; /* Remove fixed left padding */
+    justify-content: flex-start; /* Align content to top for better scrolling on smaller screens */
+    padding-top: 50px; /* Add some top padding to move content down from the very top */
+    min-height: 100vh; /* Use min-height to allow content to push the height if needed */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .logo-container {
+    top: 20px;
+    left: 20px;
+  }
+
+  .logo-text {
+    font-size: 1.5rem; /* Slightly smaller for tablets */
+  }
+
+  .login-container {
+    padding: 1.5rem; /* Slightly less padding */
+    width: 90%; /* Make it take up more width on smaller screens */
+    margin-top: 50px; /* Add some top margin to separate from logo */
+    margin-bottom: 50px; /* Add bottom margin to avoid sticking to bottom */
+  }
+}
+
+/* For screens smaller than 480px (e.g., mobile phones) */
+@media (max-width: 480px) {
+  .bodyLogin {
+    padding-top: 30px; /* Reduce top padding for very small screens */
+  }
+
+  .logo-container {
+    top: 15px;
+    left: 15px;
+  }
+
+  .logo-text {
+    font-size: 1.3rem; /* Smaller font size for mobile */
+  }
+
+  .login-container {
+    padding: 1rem; /* More compact padding for mobile */
+    width: 95%; /* Take up even more width */
+    margin-top: 30px; /* Reduce top margin */
+    margin-bottom: 30px; /* Reduce bottom margin */
+  }
+
+  .toggle-buttons button {
+    font-size: 0.9rem; /* Smaller text in buttons */
+    padding: 0.6rem;
+  }
+
+  .input-group label {
+    font-size: 0.85rem; /* Slightly smaller labels */
+  }
+
+  .input-group input {
+    font-size: 0.95rem; /* Slightly smaller input text */
+  }
+
+  .submit-btn {
+    font-size: 0.95rem;
+    padding: 0.65rem;
+  }
+}
